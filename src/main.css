@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Quenda Medium';
+    /*noinspection CssUnknownTarget*/
+    src: url('/Quenda-Medium.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}

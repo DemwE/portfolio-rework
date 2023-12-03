@@ -1,0 +1,36 @@
+---
+import '../main.css'
+import  '../icons.css'
+interface Props {
+	// noinspection TypeScriptUnresolvedReference
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Welcome to my site" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/logo.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<style lang="postcss">
+			:global {
+				@import '../main.css';
+				@import '../icons.css';
+			}
+		</style>
+		<!-- og -->
+		<meta content="DemwE" property="og:title">
+		<meta content="Welcome to my site" property="og:description">
+		<meta content="Portfolio" property="og:site_name">
+		<meta content="/logo.png" property="og:image"/>
+	</head>
+	<body class="bg-blue-600">
+		<slot />
+	</body>
+</html>

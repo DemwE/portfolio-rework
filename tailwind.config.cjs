@@ -6,7 +6,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                quenda: ['"Quenda Medium"']
+                quenda: ['"Quenda Medium"','"system-ui"']
             }
         },
     },

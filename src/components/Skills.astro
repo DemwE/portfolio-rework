@@ -8,18 +8,35 @@ import astro_js_logo from '../images/astro-js.svg';
 import html_logo from '../images/html.svg';
 import css_logo from '../images/css.svg';
 import git_logo from '../images/git.svg';
+import Skill from '../components/skill.astro';
 ---
 
 <div>
     <h1 class="text-4xl text-center font-quenda">Skills</h1>
-    <div class="grid grid-cols-2 gap-3 justify-items-center p-3 bg-gray-700 rounded-2xl">
-        <Image class="w-40 h-40" src={tailwind_css_logo} alt="Tailwind CSS Logo"/>
-        <Image class="w-40 h-40" src={linux_logo} alt="Linux Logo"/>
-        <Image class="w-40 h-40" src={rust_logo} alt="Rust Logo"/>
-        <Image class="w-40 h-40" src={javascript_logo} alt="JavaScript Logo"/>
-        <Image class="w-40 h-40" src={astro_js_logo} alt="Astro JS Logo"/>
-        <Image class="w-40 h-40" src={html_logo} alt="HTML Logo"/>
-        <Image class="w-40 h-40" src={css_logo} alt="CSS Logo"/>
-        <Image class="w-40 h-40" src={git_logo} alt="Git Logo"/>
+    <div class="grid grid-cols-1 gap-3 justify-items-center p-3 bg-gray-700 rounded-2xl max-md:w-36">
+        <Skill image={tailwind_css_logo} name="Tailwind CSS">
+            <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 85%"> 85%</div>
+        </Skill>
+        <Skill image={linux_logo} name="Linux">
+            <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 85%"> 85%</div>
+        </Skill>
+        <Skill image={rust_logo} name="Rust">
+            <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 75%"> 75%</div>
+        </Skill>
+        <Skill image={javascript_logo} name="Java Script">
+            <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 80%"> 80%</div>
+        </Skill>
+        <Skill image={astro_js_logo} name="Astro">
+            <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 80%"> 80%</div>
+        </Skill>
+        <Skill image={html_logo} name="HTML">
+            <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 100%"> 100%</div>
+        </Skill>
+        <Skill image={css_logo} name="CSS">
+            <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 95%"> 95%</div>
+        </Skill>
+        <Skill image={git_logo} name="GIT">
+            <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 90%"> 90%</div>
+        </Skill>
     </div>
 </div>

@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+
+// noinspection TypeScriptUnresolvedReference
+interface Props {
+    name: string;
+    markdown: string;
+    description: string;
+    link: string;
+}
+
+const { name } = Astro.props
+const { description } = Astro.props;
+const { link } = Astro.props;
+---
+
+<div class="bg-gray-800 rounded-2xl w-full grid grid-cols-2">
+    <div class="p-2 grid gap-2">
+        <div>
+            <h2 class="text-2xl">{name}</h2>
+            <p>{description}</p>
+        </div>
+        <a href={link} target="_blank">
+            <button class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-2xl w-full h-full">
+                GitHub
+            </button>
+        </a>
+    </div>
+    <slot />
+</div>

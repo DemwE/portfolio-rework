@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import Terminal from '../components/terminal.astro';
+import Project from '../components/Project.astro';
+import Terminal from "./Terminal.astro";
+---
+
+<div>
+    <h1 class="text-4xl text-center font-quenda">Projects</h1>
+    <div class="grid grid-cols-1 gap-3 justify-items-center p-3 bg-gray-700 rounded-2xl">
+        <Project name="rtiny" description="A simple CLI tool for creating short URLs." link="https://github.com/DemwE/rtiny">
+            <Terminal command="rtiny -u https://demwe.me/ -c demwe" output={['Original url: https://demwe.me/', 'Shorten url: https://1pt.co/demwe']} />
+        </Project>
+        <Project name="rgend" description="A simple CLI tool for generating random passwords or passphrase passwords." link="https://github.com/DemwE/rgend">
+            <Terminal command="rgend" output={['Generated password: vP1q8VrwTLuZfJYQ']} />
+        </Project>
+        <Project name="rgetd" description="A simple CLI tool for downloading files from the internet." link="https://github.com/DemwE/rgetd">
+            <Terminal command="rgetd https://demwe.me/assets/cat.png -n image.jpg" output={['[00:00:01] [#######################>----------------] 2.26 MiB/3.80 MiB | 1.18 MiB/s | eta 1s']} />
+        </Project>
+        <Project name="rneko" description="A simple CLI tool for download random nekos." link="https://github.com/DemwE/rneko">
+            <Terminal command="rneko" output={['Source image: https://www.pixiv.net/en/artworks/102799374', '[00:00:02] [##########>-----------------------------] 780.93 KiB/2.94 MiB | 294.97 KiB/s | eta 8s']} />
+        </Project>
+    </div>
+</div>

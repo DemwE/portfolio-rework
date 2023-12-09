@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import logo from '../images/logo.png';
 ---
 
 <div class="bg-slate-800 rounded-b-lg flex flex-nowrap justify-between container mx-auto px-5 text-white">
@@ -16,7 +17,7 @@
         </div>
         <div class="my-auto">
             <a href="/">
-                <img src="/logo.png" alt="Logo" class="h-16 w-16 p-2">
+                <Image class="h-16 w-16 p-2" src={logo} alt="Logo" />
             </a>
         </div>
     </div>

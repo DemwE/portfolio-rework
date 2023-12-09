@@ -1,6 +1,7 @@
 ---
 import '../main.css'
 import  '../icons.css'
+
 interface Props {
 	// noinspection TypeScriptUnresolvedReference
 	title: string;
@@ -15,14 +16,14 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Welcome to my site" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/src/images/logo.png" />
+		<link rel="icon" type="image/svg+xml" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<!-- og -->
 		<meta content="DemwE" property="og:title">
 		<meta content="Welcome to my site" property="og:description">
 		<meta content="Portfolio" property="og:site_name">
-		<meta content="/src/images/logo.png" property="og:image"/>
+		<meta content="/logo.png" property="og:image"/>
 	</head>
 	<body class="bg-blue-600 flex flex-wrap justify-center">
 		<slot />

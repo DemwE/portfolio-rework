@@ -1,0 +1,14 @@
+---
+import { execSync } from 'child_process';
+const build = execSync('git rev-parse HEAD').toString().trim();
+
+const currentYear = new Date().getFullYear();
+---
+
+<div class="bg-slate-800 rounded-t-lg flex flex-nowrap justify-between mx-auto px-5 text-white p-1">
+    <p class="p-1">&copy; {currentYear} DemwE</p>
+    <div class="flex">
+        <p class="p-1">Current build:</p>
+        <span class="p-1">{build}</span>
+    </div>
+</div>

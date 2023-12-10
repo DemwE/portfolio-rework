@@ -11,9 +11,9 @@ import git_logo from '../images/git.svg';
 import Skill from '../components/skill.astro';
 ---
 
-<div>
+<div class="max-lg:my-5">
     <h1 class="text-4xl text-center font-quenda">Skills</h1>
-    <div class="grid grid-cols-1 gap-3 justify-items-center p-3 bg-gray-700 rounded-2xl max-md:w-36">
+    <div class="grid grid-cols-1 gap-3 justify-items-center p-3 bg-gray-700 rounded-2xl sm:min-w-[300px]">
         <Skill image={tailwind_css_logo} name="Tailwind CSS">
             <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 85%"> 85%</div>
         </Skill>

@@ -8,12 +8,16 @@ import Projects from '../components/Projects.astro'
 
 <Layout title=">_">
 	<Nav/>
-	<main class="text-white mt-60 container">
+	<main class="text-white mt-60">
 		<h1 class="text-center text-7xl font-quenda">Welcome</h1>
-		<div class="flex mt-12 justify-around gap-5 mx-1">
-			<Skills/>
-			<About/>
+		<div class="lg:flex lg:gap-3 lg:justify-around">
+			<div class="lg:w-1/3">
+				<Skills/>
+			</div>
+			<div class="lg:w-2/3">
+				<About/>
+				<Projects/>
+			</div>
 		</div>
-		<Projects/>
 	</main>
 </Layout>

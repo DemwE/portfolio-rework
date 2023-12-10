@@ -8,13 +8,13 @@ const { command } = Astro.props
 const { output } = Astro.props
 ---
 
-<div class="w-full h-full bg-gray-900 rounded-2xl p-2 px-4">
-    <p>
+<div class="w-full h-full bg-gray-900 rounded-2xl p-2 px-4 overflow-auto">
+    <p class="min-w-max">
         <span class="text-blue-300">~></span>
         <span class="text-white">{ command }</span>
     </p>
     {output.map(line => (
-            <p class="text-white">
+            <p class="text-white min-w-max">
                 { line }
             </p>
     ))}

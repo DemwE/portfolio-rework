@@ -5,10 +5,10 @@ const build = execSync('git rev-parse HEAD').toString().trim();
 const currentYear = new Date().getFullYear();
 ---
 
-<div class="bg-slate-800 rounded-t-lg flex flex-nowrap justify-between mx-auto px-5 text-white p-1">
+<div class="bg-slate-800 text-center md:justify-between md:flex rounded-t-lg  mx-auto px-5 text-white p-1">
     <p class="p-1">&copy; {currentYear} DemwE</p>
-    <div class="flex">
-        <p class="p-1">Current build:</p>
-        <span class="p-1">{build}</span>
+    <div class="sm:flex justify-center">
+        <p class="p-1">Current build: </p>
+        <p class="p-1 overflow-auto"">{build}</p>
     </div>
 </div>

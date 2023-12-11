@@ -5,6 +5,42 @@ import pkg from '../../package.json';
 import { execSync } from 'child_process';
 const build = execSync('git rev-parse HEAD').toString().trim();
 const buildLink = `https://github.com/DemwE/portfolio-rework/tree/${build}`;
+
+// Get system information
+let systemInfo = '';
+try {
+    if (process.platform === 'win32') {
+        systemInfo = execSync('ver').toString().trim();
+    } else {
+        systemInfo = execSync('uname -a').toString().trim();
+    }
+} catch (error) {
+    systemInfo = 'Failed to get system information';
+}
+
+// Get Nginx version
+let nginxVersion = '';
+try {
+    if (process.platform === 'win32') {
+        nginxVersion = execSync('nginx -v 2>&1', { shell: 'cmd.exe' }).toString().trim();
+    } else {
+        nginxVersion = execSync('nginx -v 2>&1').toString().trim();
+    }
+} catch (error) {
+    nginxVersion = 'Nginx not installed or not in PATH';
+}
+
+// Get Apache version
+let apacheVersion = '';
+try {
+    if (process.platform === 'win32') {
+        apacheVersion = execSync('httpd -v 2>&1', { shell: 'cmd.exe' }).toString().trim();
+    } else {
+        apacheVersion = execSync('apachectl -v 2>&1').toString().trim();
+    }
+} catch (error) {
+    apacheVersion = 'Apache not installed or not in PATH';
+}
 ---
 
 <Layout title="Info">
@@ -19,6 +55,13 @@ const buildLink = `https://github.com/DemwE/portfolio-rework/tree/${build}`;
                 </ul>
                 <h1 class="p-2 text-2xl text-center">Current build: </h1>
                 <p class="overflow-auto p-4 bg-slate-800 rounded-2xl text-center"><a href={buildLink} class="no-underline hover:underline decoration-sky-500 decoration-2" aria-label={build} target="_blank">{build}</a></p>
+                <h1 class="p-2 text-2xl text-center">System info: </h1>
+                <p class="overflow-auto p-4 bg-slate-800 rounded-2xl text-center">{systemInfo}</p>
+                <h1 class="p-2 text-2xl text-center">Nginx or Apache version: </h1>
+                <div class="overflow-auto p-4 bg-slate-800 rounded-2xl text-center">
+                <p>{nginxVersion}</p>
+                <p>{apacheVersion}</p>
+                </div>
             </div>
         </div>
     </main>

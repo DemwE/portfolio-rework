@@ -10,6 +10,6 @@ const buildLink = `https://github.com/DemwE/portfolio-rework/tree/${build}`;
     <p class="p-1">&copy; {currentYear} DemwE</p>
     <div class="sm:flex justify-center">
         <p class="p-1">Current build: </p>
-        <p class="p-1 overflow-auto"><a href={buildLink} class="no-underline hover:underline decoration-sky-500 decoration-2" aria-label="Link to build" target="_blank">{build}</a></p>
+        <p class="p-1 overflow-auto"><a href={buildLink} class="no-underline hover:underline decoration-sky-500 decoration-2" aria-label={build} target="_blank">{build}</a></p>
     </div>
 </div>

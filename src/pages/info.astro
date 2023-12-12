@@ -7,7 +7,7 @@ const build = execSync('git rev-parse HEAD').toString().trim();
 const buildLink = `https://github.com/DemwE/portfolio-rework/tree/${build}`;
 
 // Get system information
-let systemInfo = '';
+let systemInfo: string;
 try {
     if (process.platform === 'win32') {
         systemInfo = execSync('ver').toString().trim();
@@ -26,6 +26,12 @@ try {
                 <h1 class="text-2xl p-2 text-center">Dependencies</h1>
                 <ul class="p-4 bg-slate-800 rounded-2xl">
                     {Object.entries(pkg.dependencies).map(([key, value]) => (
+                            <li>{key}: {value}</li>
+                    ))}
+                </ul>
+                <h1 class="text-2xl p-2 text-center">Dev dependencies</h1>
+                <ul class="p-4 bg-slate-800 rounded-2xl">
+                    {Object.entries(pkg.devDependencies).map(([key, value]) => (
                             <li>{key}: {value}</li>
                     ))}
                 </ul>

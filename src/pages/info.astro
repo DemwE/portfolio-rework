@@ -22,32 +22,28 @@ try {
 }
 ---
 
-<Layout title="Info">
-    <main class="flex flex-col h-screen justify-center items-center">
-        <div class="m-auto w-1/5 min-w-[438px] min-h-fit px-6 grid">
-            <div class="rounded-2xl bg-slate-700 text-white">
-                <div class="m-2">
-                    <h1 class="text-2xl p-2 text-center">Dependencies</h1>
-                    <ul class="p-4 bg-slate-800 rounded-2xl">
-                        {Object.entries(pkg.dependencies).map(([key, value]) => (
-                                <li>{key}: {value}</li>
-                        ))}
-                    </ul>
-                    <h1 class="text-2xl p-2 text-center">Dev dependencies</h1>
-                    <ul class="p-4 bg-slate-800 rounded-2xl">
-                        {Object.entries(pkg.devDependencies).map(([key, value]) => (
-                                <li>{key}: {value}</li>
-                        ))}
-                    </ul>
-                    <h1 class="p-2 text-2xl text-center">Commit date: </h1>
-                    <p class="overflow-auto p-4 bg-slate-800 rounded-2xl text-center">{buildDate}</p>
-                    <h1 class="p-2 text-2xl text-center">Built from commit: </h1>
-                    <p class="overflow-auto p-4 bg-slate-800 rounded-2xl text-center"><a href={buildLink} class="no-underline hover:underline decoration-sky-500 decoration-2" aria-label={build} target="_blank">{build}</a></p>
-                    <h1 class="p-2 text-2xl text-center">System info: </h1>
-                    <p class="overflow-auto p-4 bg-slate-800 rounded-2xl text-center">{systemInfo}</p>
-                </div>
-            </div>
-            <a href="/" class=" bg-slate-700 hover:bg-slate-800 m-4 p-2 mx-8 text-center rounded-xl leading-6 text-white"><i class="fa-solid fa-arrow-turn-down-left px-1 my-auto relative top-0.5"></i><span class="px-1 font-quenda font-light">Back to home page</span></a>
+<Layout title="Info" bodyClass="bg-blue-600 sm:mx-[5%] flex flex-col max-md:py-5 justify-center items-center sm:h-screen min-w-[394px]">
+    <main class="grid">
+        <div class="rounded-2xl bg-slate-700 text-white p-3 max-sm:max-w-sm max-sm:max-h-fit">
+            <h1 class="text-2xl p-2 text-center">Dependencies</h1>
+            <ul class="p-4 bg-slate-800 rounded-2xl">
+                {Object.entries(pkg.dependencies).map(([key, value]) => (
+                        <li>{key}: {value}</li>
+                ))}
+            </ul>
+            <h1 class="text-2xl p-2 text-center">Dev dependencies</h1>
+            <ul class="p-4 bg-slate-800 rounded-2xl">
+                {Object.entries(pkg.devDependencies).map(([key, value]) => (
+                        <li>{key}: {value}</li>
+                ))}
+            </ul>
+            <h1 class="p-2 text-2xl text-center">Commit date: </h1>
+            <p class="overflow-auto p-4 bg-slate-800 rounded-2xl text-center">{buildDate}</p>
+            <h1 class="p-2 text-2xl text-center">Built from commit: </h1>
+            <p class="overflow-auto p-4 bg-slate-800 rounded-2xl text-center"><a href={buildLink} class="no-underline hover:underline decoration-sky-500 decoration-2" aria-label={build} target="_blank">{build}</a></p>
+            <h1 class="p-2 text-2xl text-center">System info: </h1>
+            <p class="overflow-auto p-4 bg-slate-800 rounded-2xl text-center">{systemInfo}</p>
         </div>
+        <a href="/" class=" bg-slate-700 hover:bg-slate-800 m-4 p-2 mx-8 text-center rounded-xl leading-6 text-white"><i class="fa-solid fa-arrow-turn-down-left px-1 my-auto relative top-0.5"></i><span class="px-1 font-quenda font-light">Back to home page</span></a>
     </main>
 </Layout>

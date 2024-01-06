@@ -1,0 +1,20 @@
+---
+import {Image} from "astro:assets";
+interface Props {
+  image: string;
+}
+
+const { image } = Astro.props
+---
+
+
+<div class="w-full h-full bg-gray-900 rounded-2xl p-3 bg-gradient-to-tr from-sky-500 to-indigo-500 grid">
+    <a href="https://demwe-passgen.netlify.app/" class="grid">
+        <div class="bg-zinc-50 rounded-xl grid">
+        <div class="flex items-center space-x-3 mx-auto">
+            <Image class="w-20 h-20 bg-gray-900 rounded-2xl p-2" src={image} alt="Tailwind CSS Logo" format="webp"/>
+            <h1 class="text-black text-2xl font-medium">Password Generator</h1>
+        </div>
+        </div>
+    </a>
+</div>

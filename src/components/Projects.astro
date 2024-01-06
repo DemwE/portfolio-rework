@@ -1,6 +1,8 @@
 ---
 import Terminal from '../components/Terminal.astro';
 import Project from '../components/Project.astro';
+import PassGen from '../components/PassGen.astro';
+import lock from '../images/lock.png';
 ---
 
 <div class="my-5">
@@ -17,6 +19,9 @@ import Project from '../components/Project.astro';
         </Project>
         <Project name="rneko" description="A simple CLI tool for download random nekos." link="https://github.com/DemwE/rneko">
             <Terminal command="rneko" output={['Source image: https://www.pixiv.net/en/artworks/102799374', '[00:00:02] [##########>-----------------------------] 780.93 KiB/2.94 MiB | 294.97 KiB/s | eta 8s']} />
+        </Project>
+        <Project name="PassGen" description="Password generator built with TypeScript and React." link="https://github.com/DemwE/pass-gen">
+            <PassGen image={lock}/>
         </Project>
     </div>
 </div>
